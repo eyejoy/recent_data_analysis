@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Science</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Sangmo Sung" />
+    <meta name="date" content="2018-11-30" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Data Science
+## 최근 데이터 분석 소개
+### Sangmo Sung
+### 2018-11-30
+
+---
+
+
+## 목차
+
+- 개요
+
+- 용어 정리
+
+- 데이터 종류
+
+- 예측 분석 대회
+
+- 데이터 분석 사례
+
+
+
+---
+class: inverse, center, middle
+
+# 개요
+
+---
+### 개요
+
+- 이 문서는 TF 구성원들이 데이터의 종류와 데이터 분석에 대한 이해도를 높이기 위해 작성하였습니다. 기본적인 용어 설명 및 사례에 대해 간단하게 소개하려고 합니다.
+
+- 문서에는 데이터 추출/분석 도구에 대한 내용은 포함되어있지 않습니다. 대부분 데이터 추출은 SQL을 활용하는 경우가 많고, 분석 도구는 R, Python, SAS 등을 사용합니다.
+
+- 필자는 통계학 전공으로 다양한 데이터에 대한 분석 및 머신러닝에 관심이 있는 데이터 과학자 입니다.
+
+---
+class: inverse, center, middle
+
+# 용어 정리
+
+---
+### 용어 정리 #1
+
+- 데이터 과학(data science)
+    - 컴퓨터 도구를 효율적으로 이용하고, 적절한 통계학 방법을 사용하여 실제적인 문제에 답을 내리는 활동 (따라하며 배우는 데이터 과학 -권재명저&lt;sup&gt;1&lt;/sup&gt;)
+    &lt;img src="fig/001_data_science.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+.footnote[
+[1] 저자 홈페이지(https://dataninja.me/ipds-kr/)
+]
+
+---
+### 용어 정리 #2
+
+- 머신러닝(machine learning)
+    $$ \LARGE
+    Y = f(x) + \epsilon
+    $$
+    - `\(Y\)` 는 라벨/타겟 변수, `\(x\)`는 설명 변수, `\(\epsilon\)`은 오차
+    - 컴퓨터가 학습할 수 있는 알고리즘(함수 `\(f\)`)을 개발하는 것으로 예측에 초점을 두고 있음
+    - 학습은 `\(\epsilon\)`를 최소화하는 함수 `\(f\)`를 찾는 것
+    - 회귀분석인 경우 `\(f(x)\)`는 `\(\beta_0 + \beta_1 x\)` 임
+    - 예제) 이메일 스팸 분류, 숫자 이미지 분류
+
+- 머신러닝 종류
+    - 지도학습(Supervised learning): 라벨/타겟 변수(위 식에서 `\(Y\)`)가 존재
+    - 비지도학습(Unsupervised learning): 라벨/타겟 변수가 존재하지 않음
+    - 강화학습(Reinforcement learning): 환경에 따라 인터렉티브한 학습으로 최고의 정책(policy)을 찾는 방법 
+
+---
+### [참고] 지도학습(Supervised learning)
+&lt;img src="fig/002_supervised_learning.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+### [참고] 비지도학습(Unsupervised learning)
+&lt;img src="fig/002_unsupervised_learning.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+### [참고] 강화학습(Reinforcement learning)
+&lt;img src="fig/002_reinforcement_learning.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# 데이터 종류
+
+---
+
+- 데이터 종류
+    - 정형 데이터: 데이터베이스에 저장되는 규격화된 데이터 (엑셀 형태와 비슷)
+    &lt;img src="fig/003_example_structured_data.png" width="100%" style="display: block; margin: auto;" /&gt;
+    
+    - 비정형 데이터: 페이스북/트위터 글, 유튜브 영상, 이미지 파일, 음원파일 등
+    &lt;img src="fig/003_example_unstructured_data.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# 예측 분석 대회
+
+---
+
+- 예측 분석 대회
+    - 캐글 (https://www.kaggle.com/) 
+        - 캐글은 2010년 설립된 예측모델 및 분석 대회 플랫폼입니다. 기업 및 단체에서 데이터와 해결과제를 등록하면, 데이터 과학자들이 이를 해결하는 모델을 개발하고 경쟁합니다. 2017년 3월 구글에 인수되었습니다.
+    
+    &lt;img src="fig/004_kaggle_competition.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+- 예측 분석 대회
+    - 카카오아레나(https://arena.kakao.com/)
+        - 최근에 카카오에서 오픈한 플랫폼으로, 다음쇼핑 내에 등록 상품 텍스트와 이미지 정보를 통해 상품의 카테고리를 분류하는 내용을 진행하고 있습니다.
+    
+    &lt;img src="fig/004_kakao_arena.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# 데이터 분석 사례
+
+---
+
+- Convolutional Neural Network(CNN)
+
+    - 이미지에 대한 특징(Feature)를 추출하여 뉴럴 네트워크를 이용하여 분류를 하는 것
+    - 많이 쓰이는 구조들은 LeNet, AlexNet, VGGNet, ResNet 등
+    
+    &lt;img src="fig/005_cnn.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+---
+- 이미지 생성 알고리즘(GAN)
+    - 2014년에 Ian Goodfellow 교수님이 발표한 paper로, 이미지 생성 모델과 이미지를 판별하는 모델을 대립시켜 성능을 향상 시키는 방법 ([링크](https://arxiv.org/abs/1406.2661))
+    &lt;img src="fig/005_gan.png" width="70%" style="display: block; margin: auto;" /&gt;
+        - 이미지 출처: [링크](https://ratsgo.github.io/generative%20model/2017/12/20/gan/)
+        - sk T-barin disco GAN ([링크](https://www.facebook.com/notes/sk-t-brain/sk-t-brain-research/398821727155314/?fref=gs&amp;dti=255834461424286&amp;hc_location=group)) 
+        - cycle GAN ([링크](https://github.com/junyanz/CycleGAN))
+
+---
+- style2paint
+    - 스케치한 이미지에 색칠하기 ([링크](https://github.com/lllyasviel/style2paints?fbclid=IwAR2TmvlrhhMA8Max749l5VkM4Ss2QVYTLs1UlDeKVYgze1dyHipVhHMZ6_A))
+    &lt;img src="fig/005_example_style2paint.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+    
+---
+- Recurrent Neural Network(RNN)
+    - 순차적인 정보를 처리하기 위한 신경망 구조
+    &lt;img src="fig/005_rnn.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+    - 챗봇: 채팅에 대한 내용을 학습해서 자동으로 필요한 대답을 하도록 만드는 것 ([링크](https://www.slideshare.net/healess/python-tensorflow-ai-chatbot?fbclid=IwAR1NPbMLh8XuwuhCOCEwopI-GJ5rhDHXOwT6Ab70f_MM36wK43gVUYz2uvc))
+    &lt;img src="fig/005_chatbot.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+        - 이미지 출처: [링크](http://weekly.khan.co.kr/khnm.html?mode=view&amp;artid=201707111109371&amp;code=116)
+
+---
+- 목소리 학습
+
+    - Multi-Speaker Tacotron: 목소리를 학습해서 새로운 문장에 대해 학습된 목소리로 읽을 수 있게 하는 논문을 한국어로 구현한 사례([링크](https://carpedm20.github.io/tacotron/en.html))  
+    
+    &lt;img src="fig/005_voice.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+- 강화학습
+
+    - Devsisters 쿠키런 ([링크](https://www.slideshare.net/carpedm20/naver-2017))
+    &lt;img src="fig/006_devsisters.png" width="60%" style="display: block; margin: auto;" /&gt;
+    
+    - 카카오 AI리포트 슈퍼마리오 ([링크](https://brunch.co.kr/@kakao-it/144?fbclid=IwAR0ykMGlG4mDz9h6lrbj8uI3IrMJcFZYM0geUDSh87ZghZNk6tWzyrR635k)), 벽돌깨기 ([링크](https://www.youtube.com/watch?v=TmPfTpjtdgg))
+    &lt;img src="fig/006_supermario_breakout.png" width="60%" style="display: block; margin: auto;" /&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
